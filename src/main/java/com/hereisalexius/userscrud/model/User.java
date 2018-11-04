@@ -1,8 +1,13 @@
 package com.hereisalexius.userscrud.model;
 
-public class User implements java.io.Serializable {
+import java.text.ParseException;
 
-	private static final long serialVersionUID = 1L;
+import org.apache.wicket.util.io.IClusterable;
+
+import com.github.openjson.JSONObject;
+import com.googlecode.wicket.jquery.core.utils.DateUtils;
+
+public class User implements java.io.Serializable, IClusterable {
 
 	private Long id = -1L;
 	private String username;
@@ -55,5 +60,11 @@ public class User implements java.io.Serializable {
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+
+	public static User of(JSONObject object) {
+		User user = new User(object.optLong("id"), object.optString("username"), object.optString("password"),
+				object.optString("fullName"));
+		return user;
 	}
 }

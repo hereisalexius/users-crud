@@ -10,12 +10,13 @@ import com.hereisalexius.userscrud.model.User;
 
 public class UserDAO {
 
-	@Autowired
+	
+	//@Autowired
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplate;
 
 	public UserDAO() {
-		jdbcTemplate = new JdbcTemplate(dataSource);
+		//jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
 	public UserDAO(DataSource dataSource) {
@@ -84,7 +85,7 @@ public class UserDAO {
 		String query = "SELECT * FROM USERS WHERE USERNAME = ?";
 		User user = null;
 		try {
-			user = (User) jdbcTemplate.queryForObject(query, new Object[] { username }, new UserRowMapper());
+			user = (User) jdbcTemplate.query(query, new Object[] { username }, new UserRowMapper()).get(0);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
