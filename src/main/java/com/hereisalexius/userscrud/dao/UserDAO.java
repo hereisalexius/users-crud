@@ -10,13 +10,12 @@ import com.hereisalexius.userscrud.model.User;
 
 public class UserDAO {
 
-	
-	//@Autowired
+	// @Autowired
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplate;
 
 	public UserDAO() {
-		//jdbcTemplate = new JdbcTemplate(dataSource);
+		// jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
 	public UserDAO(DataSource dataSource) {
@@ -43,8 +42,8 @@ public class UserDAO {
 
 	public boolean update(User user) {
 		String query = "UPDATE USERS SET " + "USERNAME='" + user.getUsername() + "'," + "PASSWORD='"
-				+ user.getPassword() + "'," + "FULLNAME='" + user.getFullName() + "' " + "WHERE ID='" + user.getId()
-				+ "' ";
+				+ user.getPassword() + "'," + "FULLNAME='" + user.getFullName() + "' "
+				+ "WHERE USERNAME != 'admin' AND ID='" + user.getId() + "' ";
 
 		try {
 			jdbcTemplate.update(query);
@@ -57,7 +56,7 @@ public class UserDAO {
 	}
 
 	public void delete(User user) {
-		String query = "DELETE FROM USERS WHERE ID ='" + user.getId() + "' ";
+		String query = "DELETE FROM USERS WHERE USERNAME != 'admin' AND ID ='" + user.getId() + "' ";
 		jdbcTemplate.update(query);
 		user.setId(-1L);
 	}

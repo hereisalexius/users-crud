@@ -2,10 +2,22 @@
 <html xmlns:wicket="http://wicket.apache.org">
 <head>
 <wicket:head>
-	<title>Wicket Kendo UI: data-table (inline editing)</title>
+	<title>CRUD</title>
 </wicket:head>
 </head>
 <body>
+
+<form id="logoutForm" method="post" wicket:id="logoutForm">
+<fieldset>
+<input type="submit" name="Logout" value="Logout"/>
+</fieldset> 
+</form> 
+<form id="search" method="post" wicket:id="search">
+<fieldset>
+            <span>Search in fullnames : </span><input type="text" wicket:id="fullname" />
+                    <input type="submit" name="Find" value="Find"/>
+            </fieldset>    
+      </form>   
 <wicket:child>
 	<div wicket:id="datatable">[datatable]</div>
 	<br/>

@@ -10,13 +10,17 @@ import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import com.hereisalexius.userscrud.services.LoginService;
+import com.hereisalexius.userscrud.web.components.LoginForm;
 
 public class SignInPage extends WebPage {
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 5946349607750478191L;
+   
+	public SignInPage() {
+		
+		add(new LoginForm("loginForm", "username", "password", HomePage.class));
+		
+	}
     
+	/*
     @SpringBean
     private LoginService loginService; 
     
@@ -33,7 +37,7 @@ public class SignInPage extends WebPage {
                 boolean authResult = AuthenticatedWebSession.get().signIn(username, password);
                 // if authentication succeeds redirect user to the requested page
                 if (authResult && loginService.login(username, password)){
-                    setResponsePage(UsersDataTablePage.class);
+                    setResponsePage(HomePage.class);
                 }else{
                     return;
                 }
@@ -44,4 +48,5 @@ public class SignInPage extends WebPage {
         form.add(new PasswordTextField("password"));
         add(form);
     }
+    */
 }

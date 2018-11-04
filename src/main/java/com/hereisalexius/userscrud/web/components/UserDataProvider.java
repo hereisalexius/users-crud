@@ -13,8 +13,6 @@ import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortStateLoc
 import org.apache.wicket.extensions.markup.html.repeater.util.SingleSortState;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortParam;
 import org.apache.wicket.markup.repeater.data.ListDataProvider;
-import org.apache.wicket.spring.injection.annot.SpringBean;
-import com.hereisalexius.userscrud.dao.UserDAO;
 import com.hereisalexius.userscrud.model.User;
 
 public class UserDataProvider extends ListDataProvider<User> implements ISortStateLocator<String> {

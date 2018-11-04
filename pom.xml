@@ -6,7 +6,7 @@
 
 	<groupId>com.hereisalexius</groupId>
 	<artifactId>users-crud</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>users-crud</name>
@@ -37,11 +37,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.shell</groupId>
-			<artifactId>spring-shell-starter</artifactId>
-			<version>2.0.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -102,27 +97,7 @@
 			<artifactId>wicket-kendo-ui-theme-silver</artifactId>
 			<version>8.1.0</version>
 		</dependency>
-		<!-- JQUERY-UI DEPENDENCIES -->
-		<dependency>
-			<groupId>com.googlecode.wicket-jquery-ui</groupId>
-			<artifactId>wicket-jquery-ui</artifactId>
-			<version>8.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.googlecode.wicket-jquery-ui</groupId>
-			<artifactId>wicket-jquery-ui-theme-base</artifactId>
-			<version>8.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.googlecode.wicket-jquery-ui</groupId>
-			<artifactId>wicket-jquery-ui-calendar</artifactId>
-			<version>8.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.googlecode.wicket-jquery-ui</groupId>
-			<artifactId>wicket-jquery-ui-plugins</artifactId>
-			<version>8.1.0</version>
-		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -131,6 +106,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+
 		</plugins>
 		<resources>
 			<resource>

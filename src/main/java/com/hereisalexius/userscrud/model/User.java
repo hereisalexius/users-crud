@@ -1,14 +1,13 @@
 package com.hereisalexius.userscrud.model;
 
-import java.text.ParseException;
-
 import org.apache.wicket.util.io.IClusterable;
 
 import com.github.openjson.JSONObject;
-import com.googlecode.wicket.jquery.core.utils.DateUtils;
 
 public class User implements java.io.Serializable, IClusterable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private Long id = -1L;
 	private String username;
 	private String password;
