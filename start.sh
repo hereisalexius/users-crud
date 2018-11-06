@@ -4,7 +4,7 @@ echo '********************************************************************'
 echo '***                   USERS CRUD APPLICATION                     ***'
 echo '***                           (DEMO)                             ***'
 echo '***                                                              ***'
-echo '***             if you wish to lunch in one action               ***'
+echo '***             if you wish to launch in one action              ***'
 echo '***           plese edit and use manual_start.sh file            ***'
 echo '********************************************************************'
 read -p 'jdbc:postgresql://[host]:[port]/[database] -> host:' host
